@@ -10,11 +10,7 @@ import { TechnologiesView } from "../views/TechnologiesView"
 
 export const PortfolioPage = () => {
   return (
-    <PortfolioLayout
-    
-
-      
-    >
+    <PortfolioLayout>
 
       {/* Aqui estara la vista de la Introduccion */}
       <IntroductionView/>
