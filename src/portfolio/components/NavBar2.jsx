@@ -12,8 +12,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Proyectos', 'Tecnologias', 'Experiencia', 'Estudios', 'Contacto'];
 
 export const NavBar2 = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -39,8 +40,8 @@ export const NavBar2 = () => {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+{/*           
           <Typography
             variant="h5"
             noWrap
@@ -58,8 +59,8 @@ export const NavBar2 = () => {
             }}
           >
             LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          </Typography> */}
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -69,9 +70,29 @@ export const NavBar2 = () => {
                 {page}
               </Button>
             ))}
+          </Box> */}
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+            
+            <Button
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              
+              <Link
+                
+                className='seccionTecnologias' 
+                to="seccionTecnologias" 
+                spy={true} 
+                smooth={true} 
+                duration={500}
+              >
+                Tecnologias
+              </Link>
+            </Button>
+            
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp"  />
@@ -96,7 +117,7 @@ export const NavBar2 = () => {
 
                 
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

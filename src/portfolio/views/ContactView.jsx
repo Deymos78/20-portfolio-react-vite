@@ -12,7 +12,9 @@ export const ContactView = () => {
           justifycontent= 'center'
           alignitems= 'center'
           minheight= '100vh'
+          maxWidth = '100%'
           style={{ padding: '20px' }}
+          sx={{backgroundColor: '#764abc' }}
           
       >
 

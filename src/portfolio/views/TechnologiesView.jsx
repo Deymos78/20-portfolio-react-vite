@@ -4,19 +4,19 @@ import { Element } from "react-scroll"
 
 export const TechnologiesView = () => {
   return (
-    <Element name="seccionTecnologias" className="seccionTecnologias" 
-
+    <Element 
+        name="seccionTecnologias" 
+        className="seccionTecnologias" 
     >
 
     <Container
         flexdirection= 'column'
-        justifycontent= 'center'  
+        justifycontent= 'center'
         alignitems= 'center'
         minheight= '100vh'
-        style={{ padding: '20px' }}
-        sx={{backgroundColor: '#764abc'}}
-        
-        
+        style={{ paddingTop: '20px' }}
+        maxWidth = '100%'
+        sx={{backgroundColor: '#764abc' }}
     >
 
 

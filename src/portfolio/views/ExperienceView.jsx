@@ -14,6 +14,7 @@ export const ExperienceView = () => {
         alignitems= 'center'
         minheight= '100vh'
         style={{ padding: '20px' }}
+        maxWidth = '100%'
         sx={{backgroundColor: '#f58a1b'}}
         
         
