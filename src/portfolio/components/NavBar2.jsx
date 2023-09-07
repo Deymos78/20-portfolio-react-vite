@@ -14,27 +14,20 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 
-const pages = ['Proyectos', 'Tecnologias', 'Experiencia', 'Estudios', 'Contacto'];
+// const pages = ['Proyectos', 'Tecnologias', 'Experiencia', 'Estudios', 'Contacto'];
+
+const pages = [
+  {nombre: 'Proyectos', nombreClase: 'seccionProjects'},
+  {nombre: 'Tecnologias', nombreClase: 'seccionTecnologias'},
+  {nombre: 'Experiencia', nombreClase: 'seccionExperiencia'},
+  {nombre: 'Estudios', nombreClase: 'seccionStudies'},
+  {nombre: 'Contacto', nombreClase: 'seccionContacto'},
+]
 
 export const NavBar2 = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
   
-    const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
-
 
   return (
     <AppBar position="fixed">
@@ -74,21 +67,45 @@ export const NavBar2 = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             
-            <Button
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              
-              <Link
-                
-                className='seccionTecnologias' 
-                to="seccionTecnologias" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
+
+            {
+              pages.map((page) => (
+
+              <Button
+                key={page.nombre}
+                sx={{ 
+                  my: 2, 
+                  color: 'white', 
+                  position: 'relative',
+                  padding: 0,
+                  paddingLeft: 3,
+                  minWidth: 0,
+                  display: 'block'
+                }}
               >
-                Tecnologias
-              </Link>
-            </Button>
+                
+                <Link
+                  
+                  className={page.nombreClase}
+                  to={page.nombreClase}
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+
+                  style={{fontSize: 15}}
+                >
+                  {page.nombre}
+                </Link>
+              </Button>
+            ))}
             
           </Box>
 
